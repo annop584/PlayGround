@@ -61,32 +61,32 @@
                 ball.style.left = (maxX * x / 180 - 10) + "px";
             }
 
-            window.addEventListener('deviceorientation', handleOrientation);
+            // window.addEventListener('deviceorientation', handleOrientation);
                 
-            window.addEventListener('devicemotion', function (event) {
-                    console.log(event.acceleration.x + ' m/s2');
-            });
+            // window.addEventListener('devicemotion', function (event) {
+            //         console.log(event.acceleration.x + ' m/s2');
+            // });
 
 
 
-            var myShakeEvent = new Shake({
-                    threshold: 15, // optional shake strength threshold
-                    timeout: 400 // optional, determines the frequency of event generation
-                });
+            // var myShakeEvent = new Shake({
+            //         threshold: 15, // optional shake strength threshold
+            //         timeout: 400 // optional, determines the frequency of event generation
+            //     });
 
-                myShakeEvent.start();
+            //     myShakeEvent.start();
 
 
-                window.addEventListener('shake', shakeEventDidOccur, false);
+            //     window.addEventListener('shake', shakeEventDidOccur, false);
 
-                    //function to call when shake occurs
-                    function shakeEventDidOccur() {
+            //         //function to call when shake occurs
+            //         function shakeEventDidOccur() {
 
-                        //put your own code here etc.
-                        countShake = countShake+1;
-                        shakeoutput.textContent = `n_shake: ${countShake}\n`;
-                        //alert('shake!');
-                    }
+            //             //put your own code here etc.
+            //             countShake = countShake+1;
+            //             shakeoutput.textContent = `n_shake: ${countShake}\n`;
+            //             //alert('shake!');
+            //         }
     </script>
 </body>
 </html>
