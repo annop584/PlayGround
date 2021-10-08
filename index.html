@@ -13,6 +13,7 @@
     </div>
     
     <pre class="output"></pre>
+    <button onclick='requestOrientationPermission();'>Request orientation permission</button>
     <script>
             var ball = document.querySelector('.ball');
             var garden = document.querySelector('.garden');
@@ -20,7 +21,17 @@
 
             var maxX = garden.clientWidth - ball.clientWidth;
             var maxY = garden.clientHeight - ball.clientHeight;
-
+            function requestOrientationPermission() {
+                    DeviceOrientationEvent.requestPermission()
+                        .then(response => {
+                            if (response == 'granted') {
+                                window.addEventListener('deviceorientation', (e) => {
+                                    // do something with e
+                                })
+                            }
+                        })
+                        .catch(console.error)
+                }
             function handleOrientation(event) {
                 var x = event.beta;  // In degree in the range [-180,180)
                 var y = event.gamma; // In degree in the range [-90,90)
