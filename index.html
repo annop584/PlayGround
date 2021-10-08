@@ -16,6 +16,8 @@
     <button onclick='requestOrientationPermission();'>Request orientation permission</button>
     <script src="shake.js"></script>
     <script>
+            let countShake = 0;
+
             var ball = document.querySelector('.ball');
             var garden = document.querySelector('.garden');
             var output = document.querySelector('.output');
@@ -79,7 +81,9 @@
                     function shakeEventDidOccur() {
 
                         //put your own code here etc.
-                        alert('shake!');
+                        countShake++;
+                        output.textContent += `n_shake: ${countShake}\n`;
+                        //alert('shake!');
                     }
     </script>
 </body>
